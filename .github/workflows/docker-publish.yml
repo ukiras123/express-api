@@ -11,12 +11,14 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
-
+      - name: Configure AWS credentials
+        uses: aws-actions/configure-aws-credentials@v3
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ap-southeast-2
       - name: Login to Amazon ECR
         uses: aws-actions/amazon-ecr-login@v2
-        with:
-          aws_region: ap-southeast-2
-          registry: 039612872662.dkr.ecr.ap-southeast-2.amazonaws.com
 
       - name: Build the Docker image
         run: docker build -t beyond/temp .
