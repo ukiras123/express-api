@@ -9,7 +9,7 @@ app.get('/', (req, res) => {
         status: 'UP',
         uptime: process.uptime(), // Uptime of the server in seconds
         timestamp: new Date(),    // Current server time
-        message: 'API is healthy',
+        message: 'API is healthy Again',
     };
     res.status(200).json(healthStatus);
 });
