@@ -24,10 +24,10 @@ jobs:
         uses: aws-actions/amazon-ecr-login@v2
 
       - name: Build the Docker image
-        run: docker build -t beyond/temp .
+        run: docker build -t beyond/express-demo-api .
 
       - name: Tag the Docker image
-        run: docker tag beyond/temp:latest 039612872662.dkr.ecr.ap-southeast-2.amazonaws.com/beyond/temp:latest
+        run: docker tag beyond/express-demo-api:latest 039612872662.dkr.ecr.ap-southeast-2.amazonaws.com/beyond/express-demo-api:latest
 
       - name: Push the Docker image
-        run: docker push 039612872662.dkr.ecr.ap-southeast-2.amazonaws.com/beyond/temp:latest
+        run: docker push 039612872662.dkr.ecr.ap-southeast-2.amazonaws.com/beyond/express-demo-api:latest
